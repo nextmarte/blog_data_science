@@ -7,6 +7,8 @@ website:
   navbar:
     right:
       - about.qmd
+      - dashboard.qmd
+    left:
       - icon: github
         href: https://github.com/
       - icon: twitter

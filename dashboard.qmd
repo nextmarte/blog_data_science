@@ -1,0 +1,80 @@
+---
+title: dashboard
+format: dashboard
+---
+
+```{r}
+#| echo: false
+#| include: false
+
+
+
+library(ggplot2)
+
+library(esquisse)
+
+```
+
+## Row
+
+```{r}
+ggplot(ggplot2::mpg) +
+  aes(x = displ, y = hwy, colour = class) +
+  geom_point() +
+  scale_color_viridis_d(option = "inferno", direction = 1) +
+  labs(
+    x = "Volume do cilindro(1.0,
+    2.0,
+   ...)",
+    y = "Autonomia na estrada",
+    title = "Autonomia nas estradas ",
+    subtitle = "Por classe e capacidade do motor",
+    color = "Classe"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 16L,
+    face = "bold",
+    hjust = 0.5),
+    plot.subtitle = element_text(size = 12L,
+    face = "italic",
+    hjust = 0.5),
+    plot.caption = element_text(face = "bold",
+    hjust = 0.5),
+    axis.title.y = element_text(size = 12L),
+    axis.title.x = element_text(size = 12L)
+  )
+
+```
+
+## Row
+
+```{r}
+ggplot(ggplot2::mpg) +
+  aes(x = displ, y = hwy, colour = class) +
+  geom_smooth(se = TRUE) +
+  scale_color_viridis_d(option = "inferno", direction = 1) +
+  labs(
+    x = "Volume do cilindro(1.0,
+    2.0,
+   ...)",
+    y = "Autonomia na estrada",
+    title = "Autonomia nas estradas ",
+    subtitle = "Por classe e capacidade do motor",
+    color = "Classe"
+  ) +
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 16L,
+    face = "bold",
+    hjust = 0.5),
+    plot.subtitle = element_text(size = 12L,
+    face = "italic",
+    hjust = 0.5),
+    plot.caption = element_text(face = "bold",
+    hjust = 0.5),
+    axis.title.y = element_text(size = 12L),
+    axis.title.x = element_text(size = 12L)
+  )
+
+```

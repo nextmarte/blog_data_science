@@ -11,7 +11,7 @@
     "href": "index.html",
     "title": "Meu ultimo blog",
     "section": "",
-    "text": "Post With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nJun 28, 2025\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJun 25, 2025\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
+    "text": "Meu novo post\n\n\n\n\n\n\ntestes\n\n\n\nesse apenas um post de teste\n\n\n\n\n\nJun 28, 2025\n\n\nMarcus\n\n\n\n\n\n\n\n\n\n\n\n\nPost With Code\n\n\n\n\n\n\nnews\n\n\ncode\n\n\nanalysis\n\n\n\n\n\n\n\n\n\nJun 28, 2025\n\n\nHarlow Malloc\n\n\n\n\n\n\n\n\n\n\n\n\nWelcome To My Blog\n\n\n\n\n\n\nnews\n\n\n\n\n\n\n\n\n\nJun 25, 2025\n\n\nTristan O’Malley\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "about.html",
@@ -26,5 +26,40 @@
     "title": "Post With Code",
     "section": "",
     "text": "This is a post with executable code."
+  },
+  {
+    "objectID": "posts/meu-novo-post/index.html",
+    "href": "posts/meu-novo-post/index.html",
+    "title": "Meu novo post",
+    "section": "",
+    "text": "Write your blog post content here."
+  },
+  {
+    "objectID": "posts/meu-novo-post/index.html#introduction",
+    "href": "posts/meu-novo-post/index.html#introduction",
+    "title": "Meu novo post",
+    "section": "",
+    "text": "Write your blog post content here."
+  },
+  {
+    "objectID": "posts/meu-novo-post/index.html#main-content",
+    "href": "posts/meu-novo-post/index.html#main-content",
+    "title": "Meu novo post",
+    "section": "Main Content",
+    "text": "Main Content\nYour main content goes here."
+  },
+  {
+    "objectID": "posts/meu-novo-post/index.html#conclusion",
+    "href": "posts/meu-novo-post/index.html#conclusion",
+    "title": "Meu novo post",
+    "section": "Conclusion",
+    "text": "Conclusion\nWrap up your post here."
+  },
+  {
+    "objectID": "dashboard.html",
+    "href": "dashboard.html",
+    "title": "dashboard",
+    "section": "",
+    "text": "esquisser\n\nfunction (data = NULL, controls = c(\"options\", \"labs\", \"axes\", \n    \"geoms\", \"theme\", \"filters\", \"code\"), viewer = getOption(x = \"esquisse.viewer\", \n    default = \"dialog\")) \n{\n    viewer &lt;- match.arg(viewer, choices = c(\"dialog\", \"pane\", \n        \"browser\"))\n    if (!rstudioapi::isAvailable(\"1.2\")) {\n        warning(\"Esquisse may not work properly, try updating RStudio.\", \n            call. = FALSE)\n    }\n    res_data &lt;- get_data(data, name = deparse(substitute(data)))\n    if (!is.null(res_data$esquisse_data)) {\n        res_data$esquisse_data &lt;- dropListColumns(res_data$esquisse_data)\n    }\n    if (viewer == \"browser\") {\n        inviewer &lt;- browserViewer(browser = getOption(\"browser\"))\n    }\n    else if (viewer == \"pane\") {\n        inviewer &lt;- paneViewer(minHeight = \"maximize\")\n    }\n    else {\n        inviewer &lt;- dialogViewer(paste(\"— Quand tu regarderas le ciel, la nuit, puisque j'habiterai dans l'une d'elles,\", \n            \"puisque je rirai dans l'une d'elles, alors ce sera pour toi comme si riaient toutes les étoiles.\"), \n            width = 1200, height = 800)\n    }\n    runGadget(app = esquisse_ui(id = \"esquisse\", container = function(...) {\n        shiny::fillPage(theme = bs_theme_esquisse(), ...)\n    }, insert_code = TRUE, controls = controls), server = function(input, \n        output, session) {\n        esquisse_server(id = \"esquisse\", data_rv = res_data$esquisse_data, \n            name = res_data$esquisse_data_name, import_from = c(\"env\", \n                \"file\", \"copypaste\", \"googlesheets\", \"url\"))\n    }, viewer = inviewer)\n}\n&lt;bytecode: 0x000001d62330cf90&gt;\n&lt;environment: namespace:esquisse&gt;"
   }
 ]
